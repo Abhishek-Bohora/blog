@@ -5,6 +5,9 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
+  pages: {
+    signIn: "/login",
+  },
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -21,14 +24,14 @@ export const authOptions: NextAuthOptions = {
             password: credentials?.password,
           }),
         });
-        const user = await res.json();
-
-        // If no error and we have user data, return it
-        if (user) {
-          //any object returned will be saved in 'user' property of the JWT
-          return user;
+        if (res.status === 200) {
+          const user = await res.json();
+          if (user) {
+            console.log(user);
+            return user;
+          }
         }
-        // Return null if user data could not be retrieved
+
         return null;
       },
     }),
