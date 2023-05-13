@@ -1,5 +1,5 @@
-import { signJwtAccessToken } from "@/app/lib/jwt";
-import { db } from "@/app/lib/db";
+import { signJwtAccessToken } from "@/lib/jwt";
+import { db } from "@/lib/db";
 import * as bcrypt from "bcrypt";
 interface RequestBody {
   username: string;

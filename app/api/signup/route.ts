@@ -1,4 +1,4 @@
-import { db } from "@/app/lib/db";
+import { db } from "@/lib/db";
 import * as bcrypt from "bcrypt";
 interface RequestBody {
   name: string;
