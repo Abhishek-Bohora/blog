@@ -8,7 +8,6 @@ const Navbar = () => {
       </a>
       <div className="flex items-center space-x-4">
         <AuthButton />
-        <button className="btn btn-secondary">Signup</button>
       </div>
     </nav>
   );
